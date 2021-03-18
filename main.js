@@ -24,11 +24,13 @@ function showToast(message, color){
 
 myQRcode.callback = data => {
   if (data) {
+    let isValid = true;
     if(data.substring(0, 27) != base_url_allowed){
       showToast("This QR code doesn't belong to Zaitoon");
-      return;
+      isValid = false;
+    } else {
+      
     }
-    window.open(data)
     scanning = false;
     video.srcObject.getTracks().forEach(track => {
       track.stop();
@@ -36,6 +38,10 @@ myQRcode.callback = data => {
     canvasElement.hidden = true;
     btnScanQR.hidden = false;
     btnScanQRText.hidden = false;
+
+    if(isValid){
+      location.href = data;
+    }
   }
 };
 
