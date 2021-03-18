@@ -1,0 +1,164 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 0 10px;
+  height: 100%;
+  background: #e21439;
+  margin: 0;
+  position: relative;
+}
+
+h1 {
+  color: white;
+  margin: 0;
+  padding: 15px;
+}
+
+.scanNow{
+    width: 180px;
+    height: 60px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #e21439;
+    background: #FFF;
+    font-weight: bold;
+    margin-top: 60px;
+}
+
+.logo{
+    width: 50%;
+    max-width: 180px;
+}
+
+.textMain{
+    -webkit-animation: upperfadein 2s;
+    animation: upperfadein 2s;
+}
+
+#container {
+  text-align: center;
+  margin: 0;
+  padding: 40px 0;
+}
+
+#qr-canvas {
+  margin: auto;
+  width: calc(100% - 20px);
+  max-width: 400px;
+}
+
+#btn-scan-qr {
+  cursor: pointer;
+}
+
+#btn-scan-qr img {
+  height: 10em;
+  padding: 15px;
+  margin: 15px;
+  background: white;
+}
+
+#qr-result {
+  font-size: 1.2em;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 700px;
+  background-color: white;
+}
+
+
+
+/* TOAST */
+#infobar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    
+    background-color: #c0392b; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    /*position: fixed; /* Sit on top of the screen */
+    z-index: 10000; /* Add a z-index if needed */
+    right: 30px; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+#infobar.show {
+    visibility: visible; 
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 4.5s;
+    animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+#loadingbar.show {
+    visibility: visible; 
+    -webkit-animation: upperfadein 1s;
+    animation: upperfadein 1s;
+}
+
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+
+@-webkit-keyframes upperfadein {
+    from {top: 50px; opacity: 0;} 
+    to {top: 80px; opacity: 1;}
+}
+
+@keyframes upperfadein {
+    from {top: 50; opacity: 0;}
+    to {top: 80px; opacity: 1;}
+}
+
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@-webkit-keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0.2;
+  }
+}
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0.2;
+  }
+}
+.animate__flash {
+  animation: flash 2s linear infinite;
+}

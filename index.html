@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zaitoon Restaurant</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./lib/qr_packed.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <img class="logo" src="images/zaitoon-logo-white-transparent.png">
+      <p class="textMain" style="color: #FFF; font-size: 21px; font-weight: bold;">Welcome to Zaitoon</p>
+      <a id="btn-scan-qr">
+        <button class="scanNow"><tag class="animate__flash">Scan Now</tag></button>
+      <a/>
+      <div id="btn-scan-qr-text" style="display: block; color: rgb(255, 255, 255, 0.5); font-size: 12px; position: absolute; bottom: 15px; width: 100%; left: 0;">
+        <p style="text-align: center; padding: 0 10px; margin: 0">You may use any QR Code Scanner App on your mobile phone if you find this not working</p>
+      </div>
+
+      <canvas hidden="" id="qr-canvas"></canvas>
+    </div>
+    <div style="display: block; position: absolute; bottom: 15px; width: 100%; left: 0;">
+      <p style="text-align: center"><div id="infobar"></div></p>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
